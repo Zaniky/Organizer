@@ -57,21 +57,27 @@
 </nav>
 <div class="text-center">
     <h1>Add an Event:</h1>
-    <form>
-        <label>Name:</label>
-        <input type="text"><br>
-        <label>Name:</label>
-        <input type="text"><br>
-        <label>Name:</label>
-        <input type="text"><br>
-        <label>Name:</label>
-        <input type="text"><br>
-        <label>Name:</label>
-        <input type="text"><br>
-        <button type="button" class="btn btn-info">Done</button>
 
-
-    </form>
+    <div class="form-style-5">
+        <form>
+            <fieldset>
+                <input type="text" name="field1" placeholder="Name">
+                <input type="email" name="field2" placeholder="Date/Time">
+                <textarea name="field3" placeholder="Notes"></textarea>
+                <label>Add checklist?</label>
+                <select id="job" name="field4">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                </select>
+                <label>Set reminder?</label>
+                <select id="job" name="field4">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </fieldset>
+            <input type="button" value="done" onclick="alert('reeee')" />
+        </form>
+    </div>
 
 
 </div>
