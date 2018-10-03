@@ -51,12 +51,12 @@
     </ul>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <button type="button" class="btn btn-light" onclick="gotoAdd();">Add an event</button>
+            <button type="button" class="btn btn-light" onclick="alert('Not implemented yet :(')">Attach a file</button>
         </li>
     </ul>
 </nav>
 <div class="text-center">
-    <h1>Add an Event:</h1>
+    <h1>Add an Event</h1>
 
     <div class="form-style-5">
         <form>
@@ -65,17 +65,27 @@
                 <input type="email" name="field2" placeholder="Date/Time">
                 <textarea name="field3" placeholder="Notes"></textarea>
                 <label>Add checklist?</label>
-                <select id="job" name="field4">
-                        <option value="yes">Yes</option>
+                <select id="togglelist" name="field4" onchange="unhidelist()">
                         <option value="no">No</option>
+                        <option value="yes">Yes</option>
+
                 </select>
                 <label>Set reminder?</label>
-                <select id="job" name="field4">
+                <select id="job2" name="field4">
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
                 </select>
             </fieldset>
-            <input type="button" value="done" onclick="alert('reeee')" />
+            <fieldset id="checklistitems">
+                <label>Add checklist items</label>
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+            </fieldset>
+            <input type="button" value="Done" onclick="alert('reeee')" />
         </form>
     </div>
 
@@ -84,6 +94,21 @@
 <script>
     function gotoAdd() {
         window.location.href="addevent.html";
+    }
+
+    function unhidelist() { //hides or shows the checklist inputs
+        var checklist = document.getElementById("checklistitems");
+        var togglelist = document.getElementById("togglelist");
+        var toggled = togglelist.options[togglelist.selectedIndex].value;
+
+
+        //checks if dropdown value is set to yes or no
+        if (toggled === "yes") {
+            checklist.style.display = "block";
+        } else {
+            checklist.style.display = "none";
+        }
+
     }
 </script>
 
